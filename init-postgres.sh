@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-mkdir -p /var/lib/postgresql/data/logs/pglogs
-chown -R postgres:postgres /var/lib/postgresql/data/logs/pglogs
-chmod 700 /var/lib/postgresql/data/logs/pglogs
+mkdir -p /var/log/postgresql
+chown -R postgres:postgres /var/log/postgresql
+chmod 700 /var/log/postgresql
 
 mkdir -p /app/logs/applogs/$(date +%F)
 chown -R postgres:postgres /app/logs/applogs
@@ -18,7 +18,7 @@ EOF
 
 cat > /var/lib/postgresql/data/postgresql.conf <<EOF
 logging_collector = on
-log_directory = 'logs/pglogs'
+log_directory = '/var/log/postgresql'
 log_filename = 'postgresql-%Y-%m-%d.log'
 log_truncate_on_rotation = on
 log_rotation_age = 1d
