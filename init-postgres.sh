@@ -13,7 +13,7 @@ EOF
 cat > /var/lib/postgresql/data/postgresql.conf <<EOF
 listen_addresses = '*'
 logging_collector = on
-log_directory = '/var/log/postgresql'
+log_directory = 'logs'
 log_filename = 'postgresql-%Y-%m-%d.log'
 log_truncate_on_rotation = on
 log_rotation_age = 1d
