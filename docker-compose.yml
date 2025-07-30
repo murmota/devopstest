@@ -9,9 +9,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./logs/pglogs:/var/log/postgresql
-      - ./postgresql.conf:/etc/postgresql/postgresql.conf
       - ./init-postgres.sh:/docker-entrypoint-initdb.d/init-postgres.sh
-    command: postgres -c config_file=/etc/postgresql/postgresql.conf
 
   web:
     build: .
