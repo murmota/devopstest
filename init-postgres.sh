@@ -25,3 +25,4 @@ log_rotation_age = 1d
 log_rotation_size = 0
 EOF
 exec docker-entrypoint.sh postgres
+
