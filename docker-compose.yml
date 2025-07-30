@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./logs:/var/lib/postgresql/data/logs
+      - ./logs/pglogs:/var/lib/postgresql/data/logs
       - ./init-postgres.sh:/docker-entrypoint-initdb.d/init-postgres.sh
 
   web:
