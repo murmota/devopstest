@@ -8,6 +8,7 @@ import datetime
 today = datetime.date.today().isoformat()
 log_dir = f"logs/applogs/{today}"
 os.makedirs(log_dir, exist_ok=True)
+
 logging.basicConfig(
     filename=f"{log_dir}/app.log",
     level=logging.INFO,
