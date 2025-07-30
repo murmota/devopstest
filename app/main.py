@@ -3,12 +3,15 @@ from sqlalchemy.orm import Session
 from app import models, schemas, database
 import logging
 import os
-
+import datetime
 app = FastAPI()
 
-os.makedirs("logs", exist_ok=True)
+
+today = datetime.date.today().isoformat()
+log_dir = f"logs/applogs/{today}"
+os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(
-    filename="logs/app.log",
+    filename=f"{log_dir}/app.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
