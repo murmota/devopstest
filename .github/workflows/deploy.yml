@@ -29,7 +29,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/your-app-dir
+            if [ ! -d ~/devopstest ]; then
+            git clone https://github.com/murmota/devopstest.git ~/devopstest
+            fi
+            cd ~/devopstest
             git pull
             docker-compose down
             docker-compose up --build -d
+
