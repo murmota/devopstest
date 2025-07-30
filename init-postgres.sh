@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-mkdir -p /var/log/postgresql
-chown -R postgres:postgres /var/log/postgresql
-chmod 700 /var/log/postgresql
+mkdir -p /var/lib/postgresql/data/logs
 
 cat > /var/lib/postgresql/data/pg_hba.conf <<EOF
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
