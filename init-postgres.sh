@@ -2,7 +2,6 @@
 set -e
 
 mkdir -p /var/log/postgresql
-chown -R postgres:postgres /var/log/postgresql
 chmod 700 /var/log/postgresql
 
 cat > /var/lib/postgresql/data/pg_hba.conf <<EOF
