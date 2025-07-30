@@ -5,10 +5,6 @@ mkdir -p /var/log/postgresql
 chown -R postgres:postgres /var/log/postgresql
 chmod 700 /var/log/postgresql
 
-mkdir -p /app/logs/applogs/$(date +%F)
-chown -R postgres:postgres /app/logs/applogs
-chmod 700 /app/logs/applogs
-
 cat > /var/lib/postgresql/data/pg_hba.conf <<EOF
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 local   all             all                                     trust
