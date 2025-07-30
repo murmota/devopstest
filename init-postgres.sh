@@ -13,6 +13,7 @@ host    all             all             ::/0                    trust
 EOF
 
 cat > /var/lib/postgresql/data/postgresql.conf <<EOF
+listen_addresses = '*'
 logging_collector = on
 log_directory = '/var/log/postgresql'
 log_filename = 'postgresql-%Y-%m-%d.log'
