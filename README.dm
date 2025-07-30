@@ -6,6 +6,9 @@
 
 requirements.txt содержит список нужных библиотек и т.д. которые добавляются в образ с помощью Dockerfile
 В docker-compose.yml присутствует треуемый по тз volume для postgres.
+
++ скрины в ./pics
+
 ## запуск локально
 
 git clone https://github.com/murmota/devopstest.git
