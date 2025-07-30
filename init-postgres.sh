@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-mkdir -p ./logs/pg/$(date +%F)
-chown -R postgres:postgres ./logs/pg
+mkdir -p /var/lib/postgresql/data/logs/pglogs/$(date +%F)
+chown -R postgres:postgres /var/lib/postgresql/data/logs/pglogs
 
-mkdir -p ./logs/app/$(date +%F)
-chown -R postgres:postgres ./logs/app
+mkdir -p /var/lib/postgresql/data/logs/applogs/$(date +%F)
+chown -R postgres:postgres /var/lib/postgresql/data/logs/applogs
 
 cat > /var/lib/postgresql/data/pg_hba.conf <<EOF
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
